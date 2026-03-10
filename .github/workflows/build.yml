@@ -3,7 +3,7 @@ name: Build Debug APK
 on:
   push:
     branches: [ main, master ]
-  workflow_dispatch:  # permite lanzarlo manualmente desde GitHub
+  workflow_dispatch:
 
 jobs:
   build:
@@ -18,24 +18,19 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: gradle
 
-      - name: Set up Android SDK
+      - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
       - name: Make gradlew executable
-        run: chmod +x ./ntag424-sdm-demo/gradlew
-        # Si subiste el proyecto en la raíz del repo (sin carpeta ntag424-sdm-demo),
-        # cámbialo por:  chmod +x ./gradlew
+        run: chmod +x ntag424-sdm-demo/gradlew
 
       - name: Build debug APK
-        run: |
-          cd ntag424-sdm-demo
-          ./gradlew assembleDebug
-        # Si subiste el proyecto en la raíz del repo, elimina el "cd ntag424-sdm-demo"
+        run: cd ntag424-sdm-demo && ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
           path: ntag424-sdm-demo/app/build/outputs/apk/debug/app-debug.apk
-          # Ajusta la ruta igual que arriba si el proyecto está en la raíz
