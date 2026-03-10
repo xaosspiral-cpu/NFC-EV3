@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  NTAG 424 DNA is an ISO 14443-4 (ISO-DEP) tag.
+  We also declare NfcA so the foreground dispatch catches the tag at the
+  anti-collision level before TapLinX checks the type.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <tech-list>
+        <tech>android.nfc.tech.IsoDep</tech>
+        <tech>android.nfc.tech.NfcA</tech>
+    </tech-list>
+</resources>

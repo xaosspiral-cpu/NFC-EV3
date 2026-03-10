@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FAFAFA">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NTAG 424 DNA — SDM Demo"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="12dp" />
+
+    <!-- Operation selector -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnPersonalize"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1. Personalize"
+            android:textSize="12sp"
+            android:layout_margin="4dp" />
+
+        <Button
+            android:id="@+id/btnVerifySun"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2. Verify SUN"
+            android:textSize="12sp"
+            android:layout_margin="4dp" />
+
+        <Button
+            android:id="@+id/btnReadSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3. File Settings"
+            android:textSize="12sp"
+            android:layout_margin="4dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvInstruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap an NTAG 424 DNA tag after selecting an operation"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textColor="#555555" />
+
+    <!-- Log output -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:fontFamily="monospace"
+            android:textSize="12sp"
+            android:padding="8dp"
+            android:background="#1A000000"
+            android:textColor="#222222" />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear log"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
